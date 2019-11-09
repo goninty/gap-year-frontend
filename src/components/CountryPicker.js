@@ -18,7 +18,7 @@ class CountryPicker extends Component {
     this.state = {
       options: this.options,
       value: {},
-      items: [{'':''}]
+      items: []
     };
   }
 
@@ -35,17 +35,17 @@ class CountryPicker extends Component {
     const items = this.state.items;
     console.log(items);
     return (
-      <div>
+      <Col className="justify-content-center">
       <Select
         options={this.state.options}
         value={this.state.value}
         onChange={this.changeHandler}
       />
-      
+      <br/>
       {this.state.items.map(i => (
         <CountryItem value={i} />
       ))}
-      </div>
+      </Col>
 
   )};
 

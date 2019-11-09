@@ -25,7 +25,7 @@ class CountryItem extends Component {
 
   render() {
     return (
-      <Row>
+      <Row className="justify-content-center my-2">
         <Button variant="outline-info">
           <ReactCountryFlag code={this.state.code} />
           {this.state.name}

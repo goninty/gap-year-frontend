@@ -27,7 +27,7 @@ function CountrySelection({ props }) {
           <h5>Now, please pick the countries you'd like to visit.</h5>
         </Row>
       </Col>
-
+      
       <CountryPicker />
 
     </Container>
