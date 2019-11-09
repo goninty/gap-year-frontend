@@ -7,12 +7,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
 
 function Register() {
   return (
-    <div className="m-5">
-      <Row className="justify-content-md-center p-4" style={{border: "1px solid lightgrey", borderRadius: "25px"}}>
-        <Col sm="8">
+      <Row className="justify-content-md-center p-4">
+        <Col sm="4" style={{border: "1px solid lightgrey", borderRadius: "25px", padding: "2em"}}>
           <Form>
             <Form.Group controlId="formName">
               <Form.Label>Name</Form.Label>
@@ -56,7 +56,6 @@ function Register() {
           </Form>
         </Col>
       </Row>
-    </div>
     
   );
 }
