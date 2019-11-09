@@ -1,0 +1,27 @@
+.main {
+    font-size: 18px;
+}
+
+.carousel-caption {
+    transform: translateY(-50%);
+    bottom: 0;
+    top: 50%;
+}
+
+.carousel-indicators li { 
+    visibility: hidden; 
+}
+
+.bg {
+    filter: blur(4px);
+}
+
+.btn-xl {
+    padding: 4px 8px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.btn:hover, .btn:focus {
+    background-position: 0 -40px;
+}
