@@ -1,7 +1,3 @@
-.main {
-    font-size: 18px;
-}
-
 .carousel-caption {
     transform: translateY(-50%);
     bottom: 0;
@@ -13,7 +9,7 @@
 }
 
 .bg {
-    filter: blur(4px);
+    filter: blur(2px);
 }
 
 .btn-xl {
