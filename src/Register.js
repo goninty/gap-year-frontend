@@ -1,6 +1,6 @@
 import React from "react";
 import CountrySelector from "./components/CountrySelector";
-import DateOfBirthSelector from "./components/DateOfBirthSelector";
+import DateSelector from "./components/DateSelector";
 
 // React bootstrap import
 import Row from "react-bootstrap/Row";
@@ -26,7 +26,7 @@ function Register() {
 
             <Form.Group controlID="formDOB">
               <Form.Label>Date of birth</Form.Label>
-              <DateOfBirthSelector />
+              <DateSelector years={generateYears()} />
             </Form.Group>
 
             <Form.Group controlId="formPhoneNumber">
@@ -58,6 +58,19 @@ function Register() {
       </Row>
     
   );
+}
+
+function generateYears() {
+  // create the array that will hold the years we want to display
+  var years = [];
+  var j = 0;
+  
+  for (var i=new Date().getFullYear(); i>1902; i--) {
+    years[j] = i;
+    j++;
+  }
+
+  return years;
 }
 
 export default Register;
