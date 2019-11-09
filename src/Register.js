@@ -11,8 +11,8 @@ import Container from "react-bootstrap/Container";
 
 function Register() {
   return (
-      <Row className="justify-content-md-center p-4">
-        <Col sm="4" style={{border: "1px solid lightgrey", borderRadius: "25px", padding: "2em"}}>
+      <Row className="justify-content-center m-5">
+        <Col sm="10" style={{border: "1px solid lightgrey", borderRadius: "25px", padding: "2em"}}>
           <Form>
             <Form.Group controlId="formName">
               <Form.Label>Name</Form.Label>
