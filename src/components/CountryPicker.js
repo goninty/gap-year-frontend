@@ -20,6 +20,7 @@ class CountryPicker extends Component {
       value: {},
       items: this.props.items
     };
+
   }
 
   changeHandler = value => {
@@ -30,6 +31,7 @@ class CountryPicker extends Component {
     this.setState({items});
     //console.log(this.state.value);
   };
+
 
   render() {
     const items = this.state.items;
@@ -45,7 +47,8 @@ class CountryPicker extends Component {
       <br/>
       
       {this.state.items.map(i => (
-        <CountryItem value={i} />
+        <CountryItem value={i} 
+      onClick={this.props.removeItem(i)}/>
       ))}
       </Col>
 

@@ -62,6 +62,12 @@ class Register extends Component {
     event.preventDefault();
     const form = event.currentTarget;
     
+    localStorage.removeItem('userCountry');
+    localStorage.setItem('userCountry', this.state.country["label"]);
+
+    localStorage.removeItem('userEmail');
+    localStorage.setItem('userEmail', form.elements.formEmail.value);
+
     let details = {
       "email": form.elements.formEmail.value,
       "name": form.elements.formName.value,

@@ -6,6 +6,7 @@ import Homepage from "./Homepage";
 import Register from "./Register";
 import Login from "./Login";
 import CountrySelection from "./CountrySelection";
+import DisplayTrip from "./DisplayTrip";
 
 import Nav from "react-bootstrap/Nav";
 import NavBar from "react-bootstrap/Navbar";
@@ -13,10 +14,10 @@ import NavBar from "react-bootstrap/Navbar";
 function App() {
   return (
     <div>
-    <NavBar bg="dark" expand="lg">
+    <NavBar bg="info" expand="lg">
       <NavBar.Collapse id="basic-navbar-nav" />
       <Nav className="mr-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
+        <Nav.Link href="/">Home</Nav.Link>
       </Nav>
     </NavBar>
 
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path="/country-selection">
           <CountrySelection />
+        </Route>
+        <Route path="/view-trip">
+          <DisplayTrip />
         </Route>
       </Switch>
     </BrowserRouter>

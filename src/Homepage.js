@@ -23,12 +23,14 @@ function Homepage() {
         <Carousel.Item>
           <Image className="bg" src={Background} fluid />
           <Carousel.Caption>
-            <h1>Let us do the work for you.</h1>
+            <h1 style={{color: "black"}}>Let us do the work for you.</h1>
             <br/>
               <LinkContainer to="/register">
                 <Button className="mx-4" size="xl" variant="info">Get Started</Button>
               </LinkContainer>
-              <Button className="mx-4" size="xl" variant="info">Login</Button>
+              <LinkContainer to="/login">
+                <Button className="mx-4" size="xl" variant="info">Login</Button>
+              </LinkContainer>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
@@ -37,7 +39,7 @@ function Homepage() {
 
       <Container>
         <Col>
-          <h2>Welcome to your gap year made easy.</h2>
+          <h2>.</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <p></p>
         </Col>
