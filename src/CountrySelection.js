@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CountryPicker from "./components/CountryPicker";
 import countryList from 'react-select-country-list';
+import $ from 'jquery';
 
 // React bootstrap import
 import Row from "react-bootstrap/Row";
@@ -9,6 +10,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import DateSelector from "./components/DateSelector";
+
+import { withRouter } from 'react-router';
 
 class CountrySelection extends Component {
   constructor(props) {
@@ -19,20 +22,47 @@ class CountrySelection extends Component {
     };
 
     this.onPickCountry = this.onPickCountry.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
+
+  onSubmit() {
+    let details = {"countries": []}
+    let countries_list = []
+
+    for (var i=0; i<this.state.countries.length; i++) {
+      countries_list[i] = this.state.countries[i]["label"]
+    }
+
+    details["countries"] = countries_list;
+    //console.log(details);
+
+    
+    $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      url: "http://35.199.0.172/gyear/countries",
+      dataType: "application/json",
+      type: "POST",
+      data: JSON.stringify(details),
+      success: function(data) {
+        alert(data);
+      },
+      error: "oof ya did a bad"
+    });
+    
+    this.props.history.push('/');
+  };
 
   onPickCountry = newCountry => {
     let cnts = [...this.state.countries];
     cnts.push(newCountry);
     this.setState({countries: cnts});
-
-    //this.setState({countries: [...this.state.countries, {newCountry}]});
-
   }
   
   render() {
     //list of countries
-    console.log(this.state.countries);
+    //console.log(this.state.countries);
 
     return (
       <Container className="my-4">
@@ -54,9 +84,13 @@ class CountrySelection extends Component {
         <CountryPicker items={this.state.countries}
         onPickCountry={this.onPickCountry}/>
 
+        <Row className="justify-content-center my-4">
+            <Button variant="info" onClick={this.onSubmit}>Submit</Button>
+        </Row>
+
       </Container>
     );
   }
 }
 
-export default CountrySelection;
+export default withRouter(CountrySelection);

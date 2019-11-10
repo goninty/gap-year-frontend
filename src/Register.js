@@ -10,6 +10,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 
+import { withRouter } from 'react-router';
 
 class Register extends Component {
   constructor(props) {
@@ -83,6 +84,8 @@ class Register extends Component {
       success: function(data){alert(data);},
       error: 'oof ya did a bad',
     });
+
+    this.props.history.push('/country-selection');
   }
 
   render () {
@@ -134,9 +137,9 @@ class Register extends Component {
                 <Form.Control type="password"/ >
               </Form.Group>
 
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
             </Form>
           </Col>
         </Row>
@@ -144,4 +147,4 @@ class Register extends Component {
   }
 };
 
-export default Register;
+export default withRouter(Register);

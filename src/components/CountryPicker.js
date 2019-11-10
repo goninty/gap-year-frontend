@@ -28,7 +28,7 @@ class CountryPicker extends Component {
     let items = [...this.state.items]
     items.push(value);
     this.setState({items});
-    console.log(this.state.value);
+    //console.log(this.state.value);
   };
 
   render() {
@@ -41,12 +41,6 @@ class CountryPicker extends Component {
         value={this.state.value}
         onChange={ e => {this.props.onPickCountry(e); this.changeHandler(e); }}
       />
-      
-      <br/>
-      
-      <Row className="justify-content-center">
-        <Button variant="info">Submit</Button>
-      </Row>
       
       <br/>
       
