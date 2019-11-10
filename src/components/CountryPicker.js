@@ -5,7 +5,7 @@ import CountryItem from "./CountryItem";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { tsImportEqualsDeclaration } from "@babel/types";
+import Button from "react-bootstrap/Button";
 
 class CountryPicker extends Component {
   
@@ -41,7 +41,15 @@ class CountryPicker extends Component {
         value={this.state.value}
         onChange={this.changeHandler}
       />
+      
       <br/>
+      
+      <Row className="justify-content-center">
+        <Button variant="info">Submit</Button>
+      </Row>
+      
+      <br/>
+      
       {this.state.items.map(i => (
         <CountryItem value={i} />
       ))}

@@ -22,9 +22,9 @@ class DateSelector extends Component {
       days: this.days.map(v => ({label: v, value: v})),
       months: this.months.map(v => ({label: v, value: v})),
       years: this.years.map(v => ({label: v, value: v})),
-      valueDay: null,
-      valueMonth: null,
-      valueYear: null
+      valueDay: this.props.valueDay,
+      valueMonth: this.props.valueMonth,
+      valueYear: this.props.valueYear
     }
     console.log(this.state.days["29"]);
   }
@@ -59,21 +59,24 @@ class DateSelector extends Component {
                 <Select
                 options={this.state.days}
                 value={this.state.valueDay}
-                onChange={this.changeHandlerDay}
+                onChange={ e => {this.props.onChangeDay(e); this.changeHandlerDay(); }}
                 />
             </Col>
         <Col>
         <Select
                 options={this.state.months}
                 value={this.state.valueMonth}
-                onChange={this.changeHandlerMonth}
+                onChange={ e => {
+                  var monthNo = this.state.months.indexOf(e) + 1;
+                  this.props.onChangeMonth(monthNo); 
+                  this.changeHandlerMonth(); }}
                 />
         </Col>
         <Col>
         <Select
                 options={this.state.years}
                 value={this.state.valueYear}
-                onChange={this.changeHandlerYear}
+                onChange={ e => {this.props.onChangeYear(e); this.changeHandlerYear(); }}
                 />
         </Col>
       </Form.Row>

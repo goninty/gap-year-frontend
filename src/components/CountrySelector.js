@@ -10,7 +10,7 @@ class CountrySelector extends Component {
  
     this.state = {
       options: this.options,
-      value: null,
+      value: this.props.country,
     }
   }
  
@@ -23,7 +23,7 @@ class CountrySelector extends Component {
       <Select
         options={this.state.options}
         value={this.state.value}
-        onChange={this.changeHandler}
+        onChange={ e => {this.props.onChange(e); this.changeHandler() }}
       />
     )
   }
