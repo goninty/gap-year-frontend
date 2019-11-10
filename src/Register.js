@@ -67,8 +67,7 @@ class Register extends Component {
       "pwd": form.elements.formPassword.value,
       "country": this.state.country["label"],
       "phoneNo": form.elements.formPhoneNumber.value,
-      //"birthDate": this.state.day["value"] + "/" + this.state.month + "/" + this.state.year["value"]
-      "birthDate": "2019-11-12"
+      "birthDate": this.state.year["value"] + "-" + this.state.month + "-" + this.state.day["value"]
     };
 
     console.log(details);

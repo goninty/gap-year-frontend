@@ -12,8 +12,12 @@ class DateSelector extends Component {
     this.months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     this.years = [];
 
-    for (var i=0; i<31; i++) {
-      this.days[i] = i+1;
+    for (var i=0; i<10; i++) {
+      this.days[i] = "0" + (i+1).toString(10);
+    }
+
+    for (var i=10; i<31; i++) {
+      this.days[i] = (i+1).toString(10);
     }
 
     this.years = this.props.years;
@@ -30,13 +34,21 @@ class DateSelector extends Component {
   }
  
   changeHandlerDay = valueDay => {
-    this.setState({ valueDay })
+    if (valueDay < 10) {
+      this.setState("0" + { valueDay })
+    } else {
+      this.setState({ valueDay })
+    }
   }
 
   changeHandlerMonth = valueMonth => {
     this.setState({days: this.days.map(v => ({label: v, value: v}))})
 
-    this.setState({ valueMonth })
+    if (valueMonth < 10) {
+      this.setState("0" + { valueMonth })
+    } else {
+      this.setState({ valueMonth })
+    }
     
     if (valueMonth === "February") {
       delete this.state.days["28"];
@@ -68,6 +80,12 @@ class DateSelector extends Component {
                 value={this.state.valueMonth}
                 onChange={ e => {
                   var monthNo = this.state.months.indexOf(e) + 1;
+                  if (monthNo < 10) {
+                    monthNo = "0" + monthNo.toString(10);
+                  } else {
+                    monthNo = monthNo.toString(10);
+                  }
+                  console.log(monthNo);
                   this.props.onChangeMonth(monthNo); 
                   this.changeHandlerMonth(); }}
                 />
