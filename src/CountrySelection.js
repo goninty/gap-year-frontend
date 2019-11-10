@@ -14,14 +14,26 @@ class CountrySelection extends Component {
   constructor(props) {
     super(props);
 
-    this.countries = countryList().getData();
-
     this.state = {
       countries: []
     };
+
+    this.onPickCountry = this.onPickCountry.bind(this);
+  }
+
+  onPickCountry = newCountry => {
+    let cnts = [...this.state.countries];
+    cnts.push(newCountry);
+    this.setState({countries: cnts});
+
+    //this.setState({countries: [...this.state.countries, {newCountry}]});
+
   }
   
   render() {
+    //list of countries
+    console.log(this.state.countries);
+
     return (
       <Container className="my-4">
         
@@ -29,7 +41,9 @@ class CountrySelection extends Component {
             <h5>When would you like to depart?</h5>
         </Row>
         
-        <DateSelector years={[new Date().getFullYear(), new Date().getFullYear()+1]} />
+        <DateSelector 
+        years={[new Date().getFullYear(), new Date().getFullYear()+1]}
+        />
         
         <Col className="my-4"> 
           <Row className="justify-content-center">
@@ -37,7 +51,8 @@ class CountrySelection extends Component {
           </Row>
         </Col>
         
-        <CountryPicker />
+        <CountryPicker items={this.state.countries}
+        onPickCountry={this.onPickCountry}/>
 
       </Container>
     );

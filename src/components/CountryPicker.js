@@ -18,7 +18,7 @@ class CountryPicker extends Component {
     this.state = {
       options: this.options,
       value: {},
-      items: []
+      items: this.props.items
     };
   }
 
@@ -28,7 +28,7 @@ class CountryPicker extends Component {
     let items = [...this.state.items]
     items.push(value);
     this.setState({items});
-    console.log(value);
+    console.log(this.state.value);
   };
 
   render() {
@@ -39,7 +39,7 @@ class CountryPicker extends Component {
       <Select
         options={this.state.options}
         value={this.state.value}
-        onChange={this.changeHandler}
+        onChange={ e => {this.props.onPickCountry(e); this.changeHandler(e); }}
       />
       
       <br/>
