@@ -60,7 +60,7 @@ class Register extends Component {
   onSubmit = event => {
     event.preventDefault();
     const form = event.currentTarget;
-
+    
     let details = {
       "email": form.elements.formEmail.value,
       "name": form.elements.formName.value,
@@ -74,11 +74,14 @@ class Register extends Component {
     console.log(details);
 
     $.ajax({
+      headers: { 
+        'Content-Type': 'application/json' 
+      },
       url: 'http://35.199.0.172/gyear/register',
-      dataType: 'json',
+      dataType: 'application/json',
       type: 'POST',
-      data: JSON.parse(details),
-      success: 'wow good job son',
+      data: JSON.stringify(details),
+      success: function(data){alert(data);},
       error: 'oof ya did a bad',
     });
   }
