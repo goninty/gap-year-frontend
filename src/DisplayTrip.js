@@ -5,6 +5,8 @@ import GoogleMapReact from "google-map-react";
 import $ from "jquery";
 import CountryItem from "./components/CountryItem";
 
+import MyGreatPlace from './components/MyGreatPlace.jsx';
+
 // React bootstrap import
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -24,7 +26,7 @@ class DisplayTrip extends Component {
     this.state = {
       email: this.userEmail,
       country: this.startCountry,
-      center: {"lat": 32, "lng": 42}
+      center: {"lat": 51.469721, "lng": -0.454080}
     };
   }
 
@@ -40,7 +42,11 @@ class DisplayTrip extends Component {
             defaultCenter={ this.state.center }
             defaultZoom={4}
           >
+            <MyGreatPlace lat={51.469721} lng={-0.454080} text={'1'} />
+            <MyGreatPlace lat={53.046932} lng={8.786298} text={'2'} />
+            <MyGreatPlace lat={38.952236} lng={-77.459538} text={'3'} />
 
+            <MyGreatPlace lat={50.041635} lng={8.559922} text={'4'} />
           </GoogleMapReact>
         </Col>
 
@@ -51,7 +57,7 @@ class DisplayTrip extends Component {
           <br />
           <CountryItem value={{"value":"DE", "label":"Germany"}}metadata={"2019-11-15 at 11:00"} />
           <br />
-          <CountryItem value={{"value":"US", "label":"United States"}}metadata={"2019-11-21 at 11:00"} />
+          <CountryItem value={{"value":"US", "label":"United States"}}metadata={"2019-11-at 11:00"} />
           <br />
           <CountryItem value={{"value":"DE", "label":"Germany"}}metadata={"2019-11-15 at 11:00"} />
         </Col>

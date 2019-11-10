@@ -89,7 +89,7 @@ class CountrySelection extends Component {
     });
     
 
-    //this.props.history.push('/view-trip');
+    this.props.history.push('/view-trip');
   };
 
   onPickCountry = newCountry => {
@@ -163,5 +163,5 @@ class CountrySelection extends Component {
   }
 }
 
-//export default withRouter(CountrySelection);
-export default CountrySelection;
+export default withRouter(CountrySelection);
+//export default CountrySelection;

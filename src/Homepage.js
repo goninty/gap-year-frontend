@@ -39,9 +39,20 @@ function Homepage() {
 
       <Container>
         <Col>
-          <h2>.</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p></p>
+          <h2>Want to get away?</h2>
+          <p>Do you want to plan a gap year travelling?</p>
+          <p>Plan the adventure of a lifetime?</p>
+          <p>Or even just plan a commute?</p>
+          <p>We're here for you.</p>
+          <p>Utilising tools and APIs provided by SkyScanner, we are taking you everywhere you want to go, for a price you want to pay.</p>
+          <p>In the click a few buttons, you'll be away on a trap that will be unforgettable.</p> 
+          <p>Get started above.</p>
+          <br />
+          <p>This was a project created for jacobsHack! 2019.</p>
+          <p>The GitHub repo(s) can be found  
+            <a href="https://github.com/Mallington/Gap-Year"> here </a>
+            and <a href="https://github.com/goninty/gap-year-frontend">here</a>.
+          </p>
         </Col>
       </Container>
       
