@@ -67,7 +67,8 @@ class Register extends Component {
       "pwd": form.elements.formPassword.value,
       "country": this.state.country["label"],
       "phoneNo": form.elements.formPhoneNumber.value,
-      "birthDate": this.state.day["value"] + "/" + this.state.month + "/" + this.state.year["value"]
+      //"birthDate": this.state.day["value"] + "/" + this.state.month + "/" + this.state.year["value"]
+      "birthDate": "2019-11-12"
     };
 
     console.log(details);
@@ -76,7 +77,7 @@ class Register extends Component {
       url: 'http://35.199.0.172/gyear/register',
       dataType: 'json',
       type: 'POST',
-      data: details,
+      data: JSON.parse(details),
       success: 'wow good job son',
       error: 'oof ya did a bad',
     });
