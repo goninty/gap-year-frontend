@@ -47,11 +47,13 @@ class DisplayTrip extends Component {
         <Col align="center" >
           <h3>Your trip...</h3>
           <br />
-          <CountryItem value={{"value":"GB", "label":"United Kingdom"}}metadata={"11/11/19 at 14:40"} />
+          <CountryItem value={{"value":"GB", "label":"United Kingdom"}}metadata={"2019-11-11 at 14:40"} />
           <br />
-          <CountryItem value={{"value":"GB", "label":"United Kingdom"}}metadata={"11/11/19 at 14:40"} />
+          <CountryItem value={{"value":"DE", "label":"Germany"}}metadata={"2019-11-15 at 11:00"} />
           <br />
-          <CountryItem value={{"value":"GB", "label":"United Kingdom"}}metadata={"11/11/19 at 14:40"} />
+          <CountryItem value={{"value":"US", "label":"United States"}}metadata={"2019-11-21 at 11:00"} />
+          <br />
+          <CountryItem value={{"value":"DE", "label":"Germany"}}metadata={"2019-11-15 at 11:00"} />
         </Col>
       </Row>
     );

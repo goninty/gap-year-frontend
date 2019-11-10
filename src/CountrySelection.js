@@ -76,7 +76,7 @@ class CountrySelection extends Component {
       headers: {
         "Content-Type": "application/json"
       },
-      url: "http://212.201.44.245:8080/banana/countries",
+      url: "http://192.168.43.196:8080/gyear/countries",
       dataType: "json",
       type: "POST",
       data: JSON.stringify(details),
@@ -89,7 +89,7 @@ class CountrySelection extends Component {
     });
     
 
-    this.props.history.push('/view-trip');
+    //this.props.history.push('/view-trip');
   };
 
   onPickCountry = newCountry => {
@@ -163,4 +163,5 @@ class CountrySelection extends Component {
   }
 }
 
-export default withRouter(CountrySelection);
+//export default withRouter(CountrySelection);
+export default CountrySelection;
